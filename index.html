@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f3">
+  <meta name="description" content="یک اتاق جمع‌وجور برای گفت‌وگوی گروهی دوستان.">
+  <title>هم‌صحبت | اتاق گفت‌وگو</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="login-screen" id="loginScreen" hidden>
+      <div class="login-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="art-bubble bubble-a">سلام رفقا 👋</div><div class="art-bubble bubble-b">چه خبر؟</div><div class="art-center"><span>هم</span></div><div class="art-star star-one">✳</div><div class="art-star star-two">✦</div></div>
+      <div class="login-content"><div class="brand"><span class="brand-icon">هم</span><span>هم‌صحبت<small>اتاق گفت‌وگوی خودمانی</small></span></div><div class="login-intro"><span class="section-kicker">یک جای گرم برای گپ</span><h1>حرف‌هایتان را<br><em>همین‌جا</em> بزنید.</h1><p>وارد اتاق مشترک شوید و به جمع دوستان بپیوندید.</p></div><form id="loginForm" class="login-form"><label for="username">نام کاربری</label><div class="input-wrap"><span>♙</span><input id="username" name="username" autocomplete="username" placeholder="نام کاربری‌ات را بنویس" required maxlength="64"></div><label for="password">رمز عبور</label><div class="input-wrap"><span>⌑</span><input id="password" name="password" type="password" autocomplete="current-password" placeholder="رمز عبورت" required maxlength="128"></div><p class="login-error" id="loginError" role="alert"></p><button class="button button-primary login-submit" id="loginSubmit">ورود به اتاق <span>←</span></button></form><p class="invite-note"><span>✳</span> این اتاق خصوصی است؛ حساب را از مدیر اتاق بگیر.</p></div>
+    </section>
+
+    <section class="chat-screen" id="chatScreen" hidden>
+      <header class="topbar"><a class="brand" href="#"><span class="brand-icon">هم</span><span>هم‌صحبت<small>یه اتاق، کلی حرف</small></span></a><div class="header-actions"><button class="icon-button refresh-button" id="refreshBtn" title="تازه‌سازی پیام‌ها" aria-label="تازه‌سازی پیام‌ها">⟳</button><div class="user-menu"><span class="my-avatar" id="myAvatar">ر</span><span class="my-name" id="myName">رهرو</span><button class="logout-button" id="logoutBtn" title="خروج" aria-label="خروج از حساب">↪</button></div></div></header>
+      <div class="room-heading"><div><div class="room-kicker"><span class="live-dot"></span> اتاق مشترک</div><h1>دورهمی <span>✳</span></h1><p>اینجا همه با هم حرف می‌زنیم.</p></div><div class="room-stamp" aria-hidden="true"><span>☕</span></div></div>
+      <div class="chat-layout">
+        <aside class="people-card"><div class="people-title"><div><h2>اهالی اتاق</h2><small id="peopleCount">۰ نفر</small></div><span class="people-symbol">✺</span></div><div class="people-list" id="peopleList"><div class="people-loading">در حال گرفتن فهرست…</div></div><div class="people-foot"><span class="tiny-lock">♧</span><span>گفت‌وگوی دوستانه، با حساب دعوتی</span></div></aside>
+        <section class="conversation" aria-label="پیام‌های اتاق مشترک"><div class="conversation-top"><div><span class="conversation-title">پیام‌های اتاق</span><span class="conversation-subtitle" id="syncLabel">در حال اتصال…</span></div><span class="room-online"><i></i> آنلاین</span></div><div class="messages" id="messages" aria-live="polite"><div class="chat-empty" id="chatEmpty"><span>☕</span><strong>هنوز کسی چیزی نگفته</strong><small>اولین سلام با تو!</small></div></div><div class="composer-wrap"><form id="messageForm" class="composer"><textarea id="messageInput" maxlength="1000" rows="1" placeholder="پیامت را اینجا بنویس…" aria-label="متن پیام"></textarea><div class="composer-bottom"><span class="composer-hint">Enter برای ارسال · Shift + Enter برای خط بعد</span><button id="sendBtn" class="send-button" aria-label="ارسال پیام" disabled><span>ارسال</span><b>↑</b></button></div></form><div class="privacy-hint"><span>✦</span> پیام‌ها فقط برای اعضای این اتاق قابل دیدن است.</div></div></section>
+      </div>
+      <footer class="site-footer">ساخته‌شده برای گپ‌های خوب <span>✳</span></footer>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>

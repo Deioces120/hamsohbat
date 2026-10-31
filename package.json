@@ -1,0 +1,10 @@
+{
+  "name": "hamsohbat-room",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "A private, invite-only Persian group chat room",
+  "type": "module",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": { "start": "node server.js", "users": "node admin.js" }
+}
